@@ -4,3 +4,4 @@ footer{height: 30px;}
 footer>div{line-height: 30px;}
 .section-center{background-color: #fff;max-width:768px;margin: auto;padding: 10px;}
 .text-shadow-white{color: #ff1616;text-shadow: 0px 0px 3px white;}
+#roomDetail{width:100%;}
