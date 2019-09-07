@@ -20,7 +20,7 @@
 				<h3>Step 1 <small>Enter the detail of the rooms</small></h3>
 				<hr>
 				<div id="roomDetail" class="container">
-					<div class="row">
+					<div class="row room-detail-row">
 						<div class="col-xs-6 col-sm-3">
 							<input type="number" class="form-control room_rows col-xs-12" data-row-num="1" placeholder="No. of Rows">
 						</div>
@@ -31,10 +31,11 @@
 							<input type="text" class="form-control room_no col-xs-12" data-row-num="1" placeholder="Room Number" title="Default is 1,2,3...">
 						</div>
 						<div class="col-xs-3 col-sm-2">
-							<button class="btn btn-primary">Add Room</button>
+							<button class="btn btn-primary add-room">Add Room</button>
+							<button type="button" class="btn btn-danger rmv-room">Remove Room</button>
 						</div>
 						<div class="col-xs-3 col-sm-1">
-							<button type="button" class="btn btn-danger">&times;</button>
+							<button type="button" class="btn btn-danger rmv-room-cross">&times;</button>
 						</div>
 					</div>
 				</div>

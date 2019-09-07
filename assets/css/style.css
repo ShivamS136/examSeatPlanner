@@ -2,6 +2,11 @@ header{overflow: auto;padding-left: 10px}
 section{background-color:#fcfcfc; padding: 10px}
 footer{height: 30px;}
 footer>div{line-height: 30px;}
-.section-center{background-color: #fff;max-width:768px;margin: auto;padding: 10px;}
+.section-center{background-color: #fff;max-width:980px;margin: auto;padding: 10px;}
 .text-shadow-white{color: #ff1616;text-shadow: 0px 0px 3px white;}
 #roomDetail{width:100%;}
+.room-detail-row{margin: 5px 0px;}
+.room-detail-row .add-room, .room-detail-row .rmv-room-cross{display: none;}
+.room-detail-row:first-child .rmv-room, .room-detail-row:last-child .rmv-room{display: none;}
+.room-detail-row:last-child .add-room, .room-detail-row:last-child .rmv-room-cross{display: inline-block;}
+.room-detail-row:first-child .rmv-room-cross{display: none;}
