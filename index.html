@@ -22,13 +22,13 @@
 				<div id="roomDetail" class="container">
 					<div class="row room-detail-row">
 						<div class="col-xs-6 col-sm-3">
-							<input type="number" class="form-control room_rows col-xs-12" data-row-num="1" placeholder="No. of Rows">
+							<input type="number" class="form-control room-rows col-xs-12" placeholder="No. of Rows">
 						</div>
 						<div class="col-xs-6 col-sm-3">
-							<input type="number" class="form-control room_cols col-xs-12" data-row-num="1" placeholder="No. of Columns">
+							<input type="number" class="form-control room-cols col-xs-12" placeholder="No. of Columns">
 						</div>
 						<div class="col-xs-6 col-sm-3">
-							<input type="text" class="form-control room_no col-xs-12" data-row-num="1" placeholder="Room Number" title="Default is 1,2,3...">
+							<input type="text" class="form-control room-no col-xs-12" placeholder="Room Number" title="Default is 1,2,3..." data-default-rn="1">
 						</div>
 						<div class="col-xs-3 col-sm-2">
 							<button class="btn btn-primary add-room">Add Room</button>
@@ -36,6 +36,14 @@
 						</div>
 						<div class="col-xs-3 col-sm-1">
 							<button type="button" class="btn btn-danger rmv-room-cross">&times;</button>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<button type="button" class="btn btn-success" id="btnSubmit">Create Exam Seat Map</button>
 						</div>
 					</div>
 				</div>
