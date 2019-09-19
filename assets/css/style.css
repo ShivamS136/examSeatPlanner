@@ -4,9 +4,20 @@ footer{height: 30px;}
 footer>div{line-height: 30px;}
 .section-center{background-color: #fff;max-width:980px;margin: auto;padding: 10px;}
 .text-shadow-white{color: #ff1616;text-shadow: 0px 0px 3px white;}
-#roomDetail{width:100%;}
-.room-detail-row{margin: 5px 0px;}
-.room-detail-row .add-room, .room-detail-row .rmv-room-cross{display: none;}
-.room-detail-row:first-child .rmv-room, .room-detail-row:last-child .rmv-room{display: none;}
-.room-detail-row:last-child .add-room, .room-detail-row:last-child .rmv-room-cross{display: inline-block;}
-.room-detail-row:first-child .rmv-room-cross{display: none;}
+.container{width:100%;}
+.btn-row{margin: 5px 0px;}
+.btn-row .add-btn, .btn-row .rmv-btn-cross{display: none;}
+.btn-row:first-child .rmv-btn, .btn-row:last-child .rmv-btn{display: none;}
+.btn-row:last-child .add-btn, .btn-row:last-child .rmv-btn-cross{display: inline-block;}
+.btn-row:first-child .rmv-btn-cross{display: none;}
+.subclass-box{box-shadow: 1px 1px 3px grey}
+.sublass-detail-row{width: 250px;margin: 10px}
+/* Flex CSS */
+.flex-container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+}

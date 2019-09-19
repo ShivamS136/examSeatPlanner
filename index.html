@@ -20,22 +20,48 @@
 				<h3>Step 1 <small>Enter the detail of the rooms</small></h3>
 				<hr>
 				<div id="roomDetail" class="container">
-					<div class="row room-detail-row">
+					<div class="row btn-row room-detail-row">
 						<div class="col-xs-6 col-sm-3">
-							<input type="number" class="form-control room-rows col-xs-12" placeholder="No. of Rows">
+							<input type="number" class="form-control room-rows" placeholder="No. of Rows">
 						</div>
 						<div class="col-xs-6 col-sm-3">
-							<input type="number" class="form-control room-cols col-xs-12" placeholder="No. of Columns">
+							<input type="number" class="form-control room-cols" placeholder="No. of Columns">
 						</div>
 						<div class="col-xs-6 col-sm-3">
-							<input type="text" class="form-control room-no col-xs-12" placeholder="Room Number" title="Default is 1,2,3..." data-default-rn="1">
+							<input type="text" class="form-control room-no" placeholder="Room Number" title="Default is 1,2,3..." data-default-rn="1">
 						</div>
 						<div class="col-xs-3 col-sm-2">
-							<button class="btn btn-primary add-room">Add Room</button>
-							<button type="button" class="btn btn-danger rmv-room">Remove Room</button>
+							<button class="btn btn-primary add-btn add-room">Add Room</button>
+							<button type="button" class="btn btn-danger rmv-btn rmv-room">Remove Room</button>
 						</div>
 						<div class="col-xs-3 col-sm-1">
-							<button type="button" class="btn btn-danger rmv-room-cross">&times;</button>
+							<button type="button" class="btn btn-danger rmv-btn-cross rmv-room-cross">&times;</button>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<h3>Step 2 <small>Enter the detail of class and students</small></h3>
+				<hr>
+				<div id="classDetail" class="container">
+					<div class="row btn-row class-detail-row">
+						<div class="col-xs-6 col-sm-3">
+							<input type="text" class="form-control class-name" placeholder="Class Name">
+						</div>
+						<div class="col-xs-6 col-sm-2">
+							<input type="text" class="form-control subclass-name" placeholder="Section Name">
+						</div>
+						<div class="col-xs-3 col-sm-2">
+							<input type="number" class="form-control subclass-count" placeholder="No. of Students">
+						</div>
+						<div class="col-xs-3 col-sm-2">
+							<button class="btn btn-default add-rollno">Add Roll No.</button>
+						</div>
+						<div class="col-xs-3 col-sm-2">
+							<button class="btn btn-primary add-btn add-class">Add Class</button>
+							<button type="button" class="btn btn-danger rmv-btn rmv-class">Remove Room</button>
+						</div>
+						<div class="col-xs-3 col-sm-1">
+							<button type="button" class="btn btn-danger rmv-btn-cross rmv-class-cross">&times;</button>
 						</div>
 					</div>
 				</div>
