@@ -4,6 +4,7 @@ section{background-color:#fcfcfc; padding: 10px}
 footer{height: 30px;}
 .bg-primary{background: linear-gradient(45deg, #337ab7, #52b5ff)}
 .container{width:100%;}
+.form-control{padding: 5px}
 
 /* Flex CSS */
 .flex-container{
