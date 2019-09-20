@@ -15,10 +15,12 @@ footer{height: 30px;}
 	align-content: flex-start;
 }
 
-/* Custom CSS */
-footer>div{line-height: 30px;}
-.section-center{background-color: #fff;max-width:980px;margin: auto;padding: 10px;}
+/* Custom General CSS */
 .text-shadow-white{color: #ff1616;text-shadow: 0px 0px 3px white;}
+footer>div{line-height: 30px;}
+
+/* Custom CSS */
+.section-center{background-color: #fff;max-width:980px;margin: auto;padding: 10px;}
 .btn-row{margin: 5px 0px;}
 .btn-row .add-btn, .btn-row .rmv-btn-cross{display: none;}
 .btn-row:first-child .rmv-btn, .btn-row:last-child .rmv-btn{display: none;}
