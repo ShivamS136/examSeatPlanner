@@ -29,5 +29,4 @@ footer>div{line-height: 30px;}
 .btn-row:first-child .rmv-btn, .btn-row:last-child .rmv-btn{display: none;}
 .btn-row:last-child .add-btn, .btn-row:last-child .rmv-btn-cross{display: inline-block;}
 .btn-row:first-child .rmv-btn-cross{display: none;}
-.subclass-box{box-shadow: 1px 1px 3px grey}
 .sublass-detail-row{width: 250px;margin: 10px}

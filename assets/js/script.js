@@ -7,7 +7,7 @@ $(document).ready(function() {
 		if (e.ctrlKey) {
 			addRow(this, "class", "class");
 		} else {
-			addRow(this, "class", "subclass");
+			addRow(this, "class", "section");
 		}
 	});
 	$(".rmv-room, .rmv-room-cross").on("click", function() {
@@ -48,15 +48,25 @@ const addNewRoom = function() {
 };
 const addNewClass = (rowTypeSec) => {
 	var lastClassObj = $(".class-detail-row:last-child");
+	var old_className = lastClassObj.find(".class-name").val();
+	var old_textType = lastClassObj.find(".section-name").attr("data-text-type");
+	var old_sectionName = lastClassObj.find(".section-name").val();
+	if(old_className == ""){
+		old_className = 1;
+		lastClassObj.find(".class-name").val(old_className);
+	}
+	if(old_sectionName == ""){
+		old_sectionName = "A";
+		lastClassObj.find(".section-name").val(old_sectionName);
+		old_textType = "alpha-capital";
+		lastClassObj.find(".section-name").attr("data-text-type",old_textType)
+	}
 	var newClassObj = lastClassObj.clone(true);
-	var old_className = newClassObj.find(".class-name").val();
-	var old_textType = newClassObj.find(".subclass-name").attr("data-text-type");
-	var old_subclassName = newClassObj.find(".subclass-name").val();
 	var new_className = old_className;
-	var new_subclassName = old_subclassName;
-	var new_textType = getTextType(old_subclassName) || "";
+	var new_sectionName = old_sectionName;
+	var new_textType = getTextType(old_sectionName);
 	if (old_textType == "" || old_textType != new_textType) {
-		new_textType = getTextType(old_subclassName) || "";
+		new_textType = getTextType(old_sectionName);
 	}
 	if (rowTypeSec == "class") {
 		if (!isNaN(old_className)) {
@@ -64,14 +74,14 @@ const addNewClass = (rowTypeSec) => {
 		} else if (old_className.toLowerCase().trim() == "high school" || old_className.toLowerCase().trim() == "highschool" || old_className.toLowerCase().trim() == "high-school") {
 			new_className = 11;
 		}
-		new_subclassName = getTextType(new_textType, true) || "";
+		new_sectionName = getTextType(new_textType, true);
 	} else {
 		new_className = old_className;
-		new_subclassName = incrTextValue(old_subclassName, new_textType);
+		new_sectionName = incrTextValue(old_sectionName, new_textType);
 	}
 	newClassObj.find(".class-name").val(new_className);
-	newClassObj.find(".subclass-name").val(new_subclassName);
-	newClassObj.find(".subclass-name").attr("data-text-type", new_textType);
+	newClassObj.find(".section-name").val(new_sectionName);
+	newClassObj.find(".section-name").attr("data-text-type", new_textType);
 	newClassObj.appendTo("#classDetail");
 };
 const getTextType = (str, reverse = false) => {
@@ -81,23 +91,27 @@ const getTextType = (str, reverse = false) => {
 	if (reverse) {
 		result = initValue[textType.indexOf(str.trim())] || "A";
 	} else {
-		if (!isNaN(str)) {
-			result = "num";
-		} else if (roman_str_to_num(str)) {
-			var patt = /[IVXLCDM]/g;
-			if (patt.test(str)) {
-				result = "roman-capital";
-			} else {
-				result = "roman-small";
-			}
-		} else if (str.length == 1) {
+		if (str.length == 1) {
 			result = textType[initValue.indexOf(str.trim())];
-		} else {
-			var patt = /[A-Z]/g;
-			if (patt.test(str)) {
-				result = "alpha-capital";
-			} else {
-				result = "alpha-small";
+		}
+		if(!result){
+			if (!isNaN(str)) {
+				result = "num";
+			} else if (roman_str_to_num(str)) {
+				var patt = /[IVXLCDM]/g;
+				if (patt.test(str)) {
+					result = "roman-capital";
+				} else {
+					result = "roman-small";
+				}
+			} 
+			else{
+				var patt = /[A-Z]/g;
+				if (patt.test(str)) {
+					result = "alpha-capital";
+				} else {
+					result = "alpha-small";
+				}
 			}
 		}
 	}
@@ -127,11 +141,11 @@ const incrTextValue = (str, textType) => {
 };
 const roman_num_to_str = (num) => {
 	var lookup = [
-			[1000, 'M'],
-			[900, 'CM'],
-			[500, 'D'],
-			[400, 'CD'],
-			[100, 'C'],
+			// [1000, 'M'],
+			// [900, 'CM'],
+			// [500, 'D'],
+			// [400, 'CD'],
+			// [100, 'C'],
 			[90, 'XC'],
 			[50, 'L'],
 			[40, 'XL'],
@@ -154,7 +168,7 @@ const roman_num_to_str = (num) => {
 	return roman;
 }
 const roman_str_to_num = (str1) => {
-	if (str1 == null) return -1;
+	if (str1 == null) return undefined;
 	str1 = str1.toUpperCase();
 	var num = roman_char_to_num(str1.charAt(0));
 	if (num == -1) {
@@ -187,12 +201,12 @@ const roman_char_to_num = (c) => {
 			return 10;
 		case 'L':
 			return 50;
-		case 'C':
-			return 100;
-		case 'D':
-			return 500;
-		case 'M':
-			return 1000;
+		// case 'C':
+		// 	return 100;
+		// case 'D':
+		// 	return 500;
+		// case 'M':
+		// 	return 1000;
 		default:
 			return -1;
 	}
