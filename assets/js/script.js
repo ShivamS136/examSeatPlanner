@@ -16,6 +16,11 @@ $(document).ready(function() {
 	$(".rmv-class, .rmv-class-cross").on("click", function() {
 		rmvRow(this, "class");
 	});
+	$(".add-rollno").on("click", function(){
+		showAddRollNoDiv(this);
+	});$(".close-rollno-div").on("click", function(){
+		closeAddRollNoDiv(this);
+	});
 	$("#btnSubmit").on("click", createExamSitting);
 });
 const addRow = (ele, rowType, rowTypeSec = "") => {
@@ -211,6 +216,26 @@ const roman_char_to_num = (c) => {
 			return -1;
 	}
 }
+
+const showAddRollNoDiv = (ele)=>{
+	var n = $(ele).parents(".class-detail-row").find(".student-count").val()-0;
+	$rollnoDiv = $(ele).parent().find(".rollno-div");
+	var e = $rollnoDiv.find(".rollno-table tr").length - 1;
+	if(n!=e && n>e){
+		var $rollnoTable = $rollnoDiv.find(".rollno-table");
+		for (var i = 0; i < n-e; i++) {
+			var c = $($rollnoDiv.find(".rollno-table tr")[e+i]).clone();
+			c.find("td:first-child").html(c.find("td:first-child").html()-0+1);
+			c.appendTo($rollnoTable)
+		}
+	}
+	$(ele).parent().find(".rollno-div").show();
+	$(".blurbox").show();
+}
+const closeAddRollNoDiv = (ele) => {
+	$(ele).parents().find(".rollno-div").hide();
+	$(".blurbox").hide();
+}
 class Room {
 	constructor(rows, cols, roomName = "", seatsFilled = []) {
 		rows = parseInt(rows);
@@ -246,6 +271,42 @@ const initRoomObject = function() {
 		}
 	});
 };
+const trimInputs = () =>{
+	var eleArr = $("section input[type='text'], section input[type='number']");
+	for(var i = 0; i<eleArr.length; i++){
+		$(eleArr[i]).val($(eleArr[i]).val().trim());
+	}
+}
+const validation = ()=>{
+	var f = false;
+	var p = {
+		"#roomDetail .room-detail-row"	: [".room-rows", ".room-cols"], 
+		"#classDetail .class-detail-row": [".student-count"]
+	};
+	for(var par in p){
+		var parEle = $(par);
+		for(var e of p[par]){
+			for(var i = 0; i<parEle.length; i++){
+				var childEle = parEle[i];
+				var $e = $(childEle).find(e);
+				if($e.val() == "" || isNaN($e.val())){
+					$($e).parent().addClass("has-error");
+					$($e).parent().find(".help-block").show();
+					if(!f){
+						f = true;
+						$($e).focus();
+					}
+				}
+				else{
+					$($e).parent().removeClass("has-error");
+					$($e).parent().find(".help-block").hide();
+				}
+			}
+		}
+	}
+}
 const createExamSitting = function() {
+	trimInputs();
+	validation();
 	initRoomObject();
 };

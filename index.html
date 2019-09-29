@@ -23,9 +23,11 @@
 					<div class="row btn-row room-detail-row">
 						<div class="col-xs-6 col-sm-3">
 							<input type="number" class="form-control room-rows" placeholder="No. of Rows">
+							<span class="help-block has-error">Value must be a number</span>
 						</div>
 						<div class="col-xs-6 col-sm-3">
 							<input type="number" class="form-control room-cols" placeholder="No. of Columns">
+							<span class="help-block has-error">Value must be a number</span>
 						</div>
 						<div class="col-xs-6 col-sm-3">
 							<input type="text" class="form-control room-no" placeholder="Room Number" title="Default is 1,2,3..." data-default-rn="1">
@@ -52,9 +54,28 @@
 						</div>
 						<div class="col-xs-3 col-sm-2">
 							<input type="number" class="form-control student-count" placeholder="No. of Students">
+							<span class="help-block">Value must be a number</span>
 						</div>
 						<div class="col-xs-3 col-sm-2">
 							<button class="btn btn-default add-rollno">Add Roll No.</button>
+							<div class="rollno-div top-layer container">
+								<div class="row">
+									<h4 class="pull-left">Add Roll No. <small>Add students roll no in order</small></h4>
+									<button type="button" class="close close-rollno-div" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								</div>
+								<div class="row">
+									<table class="table table-striped table-bordered table-responsive rollno-table">
+										<tr>
+											<th class="text-center">Sr.</th>
+											<th class="text-center">Roll No.</th>
+										</tr>
+										<tr>
+											<td class="text-center">1</td>
+											<td><input type="text" class="form-control roll-no-input" placeholder="Roll No."></td>
+										</tr>
+									</table>
+								</div>
+							</div>
 						</div>
 						<div class="col-xs-3 col-sm-2">
 							<button class="btn btn-primary add-btn add-class" title="Click to add section Or Ctrl+Click to add class">Add Class</button>
@@ -74,6 +95,7 @@
 					</div>
 				</div>
 			</div>
+			<div class="blurbox"></div>
 		</section>
 		<footer class="bg-primary">
 			<div class="text-center margin-auto">Made with 

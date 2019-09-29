@@ -7,6 +7,7 @@ footer{height: 30px;}
 .btn-primary:hover{background-color: #3e7dbc}
 .container{width:100%;}
 .form-control{padding: 5px}
+.help-block{display: none;}
 
 /* Flex CSS */
 .flex-container{
@@ -30,3 +31,6 @@ footer>div{line-height: 30px;}
 .btn-row:last-child .add-btn, .btn-row:last-child .rmv-btn-cross{display: inline-block;}
 .btn-row:first-child .rmv-btn-cross{display: none;}
 .sublass-detail-row{width: 250px;margin: 10px}
+.rollno-div{display:none;position: fixed;top: 50%; left: 50%; transform: translate(-50%, -50%);height:80%;width:80%;max-width:600px;background-color:#FFF;padding:10px 25px;box-shadow:0 0 5px grey;border-radius: 5px;}
+.top-layer{z-index: 999999;}
+.blurbox{width: 100%;height: 100%;background-color: rgba(0,0,0,0.5);position: fixed;top: 0;left: 0;display: none;}
