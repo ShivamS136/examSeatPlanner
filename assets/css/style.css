@@ -34,3 +34,9 @@ footer>div{line-height: 30px;}
 .rollno-div{display:none;position: fixed;top: 50%; left: 50%; transform: translate(-50%, -50%);height:80%;width:80%;max-width:600px;background-color:#FFF;padding:10px 25px;box-shadow:0 0 5px grey;border-radius: 5px;}
 .top-layer{z-index: 999999;}
 .blurbox{width: 100%;height: 100%;background-color: rgba(0,0,0,0.5);position: fixed;top: 0;left: 0;display: none;}
+.seating-table .valA{background-color: #a8d08d;}
+.seating-table .valB{background-color: #ffd966;}
+.seating-table .valC{background-color: #18e2ec;}
+div .seating-table tr td, div .seating-table tr th {border: 1px solid black;}
+.pad-7{padding:7px;}
+.col-xs-6 .pad-7{box-shadow: 0 0 3px grey;border-radius: 5px;}

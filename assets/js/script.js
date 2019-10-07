@@ -22,7 +22,20 @@ $(document).ready(function() {
 		closeAddRollNoDiv(this);
 	});
 	$("#btnSubmit").on("click", createExamSitting);
+
+	addClassToSeatingTable();
 });
+const addClassToSeatingTable = ()=>{
+	$(".seating-table td").each(function(){
+		if($(this).is(":contains(A)")){
+			$(this).addClass("valA");
+		}else if($(this).is(":contains(B)")){
+			$(this).addClass("valB");
+		}else if($(this).is(":contains(C)")){
+			$(this).addClass("valC");
+		}
+	});
+};
 const addRow = (ele, rowType, rowTypeSec = "") => {
 	switch (rowType) {
 		case "room":
