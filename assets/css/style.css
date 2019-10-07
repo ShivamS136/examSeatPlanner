@@ -40,3 +40,4 @@ footer>div{line-height: 30px;}
 div .seating-table tr td, div .seating-table tr th {border: 1px solid black;}
 .pad-7{padding:7px;}
 .col-xs-6 .pad-7{box-shadow: 0 0 3px grey;border-radius: 5px;}
+.cpr-3{display: none;}

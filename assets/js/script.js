@@ -22,9 +22,27 @@ $(document).ready(function() {
 		closeAddRollNoDiv(this);
 	});
 	$("#btnSubmit").on("click", createExamSitting);
-
+	$("input[type='radio'][name='cpr']").on("click", function(){
+		changeCpr(this.value);
+	});
 	addClassToSeatingTable();
 });
+const changeCpr = (cpr) =>{
+	$("[class^='cpr-'], table[class*=' cpr-']").each(function(){
+		if($(this).hasClass("cpr-"+cpr)){
+			$(this).show();
+		}
+		else{
+			$(this).hide();
+		}
+	});
+	if(cpr==2){
+		$("input[type='radio'][name='seating_type'][value='AABB']").prop("checked", true);
+	}
+	else{
+		$("input[type='radio'][name='seating_type'][value='AABBCC']").prop("checked", true);
+	}
+}
 const addClassToSeatingTable = ()=>{
 	$(".seating-table td").each(function(){
 		if($(this).is(":contains(A)")){
@@ -323,3 +341,19 @@ const createExamSitting = function() {
 	validation();
 	initRoomObject();
 };
+
+function breakScribd(){
+   var a =  document.querySelectorAll(".auto__doc_page_webpack_doc_page_blur_promo");
+for(b of a){b.style.display = 'none';};
+setTimeout(function(){var a = document.querySelectorAll("img")
+for(b of a){
+    b.style.opacity = '1';
+}},500);
+/*
+Add CSS:
+*{
+	color: #333 !important;
+	text-shadow:none !important;
+}
+*/
+}
