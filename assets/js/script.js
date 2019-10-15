@@ -39,8 +39,11 @@ const changeCpr = (cpr) =>{
 	if(cpr==2){
 		$("input[type='radio'][name='seating_type'][value='AABB']").prop("checked", true);
 	}
-	else{
+	else if(cpr==3){
 		$("input[type='radio'][name='seating_type'][value='AABBCC']").prop("checked", true);
+	}
+	else if(cpr==4){
+		$("input[type='radio'][name='seating_type'][value='AABBCCDD']").prop("checked", true);
 	}
 }
 const addClassToSeatingTable = ()=>{
@@ -51,6 +54,8 @@ const addClassToSeatingTable = ()=>{
 			$(this).addClass("valB");
 		}else if($(this).is(":contains(C)")){
 			$(this).addClass("valC");
+		}else if($(this).is(":contains(D)")){
+			$(this).addClass("valD");
 		}
 	});
 };

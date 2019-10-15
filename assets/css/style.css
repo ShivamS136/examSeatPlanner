@@ -37,7 +37,8 @@ footer>div{line-height: 30px;}
 .seating-table .valA{background-color: #a8d08d;}
 .seating-table .valB{background-color: #ffd966;}
 .seating-table .valC{background-color: #18e2ec;}
+.seating-table .valD{background-color: #ff9e9e;}
 div .seating-table tr td, div .seating-table tr th {border: 1px solid black;}
 .pad-7{padding:7px;}
 .col-xs-6 .pad-7{box-shadow: 0 0 3px grey;border-radius: 5px;}
-.cpr-3{display: none;}
+.cpr-3,.cpr-4{display: none;}
